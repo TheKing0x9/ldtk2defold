@@ -1,0 +1,598 @@
+images {
+  image: "/example/assets/images/decor/decor_1.png"
+}
+images {
+  image: "/example/assets/images/decor/decor_2.png"
+}
+images {
+  image: "/example/assets/images/decor/decor_3.png"
+}
+images {
+  image: "/example/assets/images/decor/decor_4.png"
+}
+images {
+  image: "/example/assets/images/decor/decor_5.png"
+}
+images {
+  image: "/example/assets/images/decor/decor_6.png"
+}
+images {
+  image: "/example/assets/images/decor/decor_7.png"
+}
+images {
+  image: "/example/assets/images/decor/decor_8.png"
+}
+images {
+  image: "/example/assets/images/traps/lift.png"
+}
+animations {
+  id: "barrier_flash"
+  images {
+    image: "/example/assets/images/barrier_idle/tile000.png"
+  }
+  images {
+    image: "/example/assets/images/barrier_idle/tile001.png"
+  }
+  images {
+    image: "/example/assets/images/barrier_idle/tile002.png"
+  }
+  images {
+    image: "/example/assets/images/barrier_idle/tile003.png"
+  }
+  images {
+    image: "/example/assets/images/barrier_idle/tile004.png"
+  }
+  images {
+    image: "/example/assets/images/barrier_idle/tile005.png"
+  }
+  images {
+    image: "/example/assets/images/barrier_idle/tile006.png"
+  }
+  images {
+    image: "/example/assets/images/barrier_idle/tile007.png"
+  }
+  images {
+    image: "/example/assets/images/barrier_idle/tile008.png"
+  }
+  images {
+    image: "/example/assets/images/barrier_idle/tile009.png"
+  }
+  images {
+    image: "/example/assets/images/barrier_idle/tile010.png"
+  }
+  images {
+    image: "/example/assets/images/barrier_idle/tile011.png"
+  }
+  images {
+    image: "/example/assets/images/barrier_idle/tile012.png"
+  }
+  images {
+    image: "/example/assets/images/barrier_idle/tile013.png"
+  }
+  images {
+    image: "/example/assets/images/barrier_idle/tile014.png"
+  }
+  images {
+    image: "/example/assets/images/barrier_idle/tile015.png"
+  }
+  images {
+    image: "/example/assets/images/barrier_idle/tile016.png"
+  }
+  images {
+    image: "/example/assets/images/barrier_idle/tile017.png"
+  }
+  fps: 12
+}
+animations {
+  id: "barrier_deactivate"
+  images {
+    image: "/example/assets/images/barrier_deactivate/tile000.png"
+  }
+  images {
+    image: "/example/assets/images/barrier_deactivate/tile001.png"
+  }
+  images {
+    image: "/example/assets/images/barrier_deactivate/tile002.png"
+  }
+  images {
+    image: "/example/assets/images/barrier_deactivate/tile003.png"
+  }
+  images {
+    image: "/example/assets/images/barrier_deactivate/tile004.png"
+  }
+  images {
+    image: "/example/assets/images/barrier_deactivate/tile005.png"
+  }
+  images {
+    image: "/example/assets/images/barrier_deactivate/tile006.png"
+  }
+  images {
+    image: "/example/assets/images/barrier_deactivate/tile007.png"
+  }
+  images {
+    image: "/example/assets/images/barrier_deactivate/tile008.png"
+  }
+  images {
+    image: "/example/assets/images/barrier_deactivate/tile009.png"
+  }
+  images {
+    image: "/example/assets/images/barrier_deactivate/tile010.png"
+  }
+  images {
+    image: "/example/assets/images/barrier_deactivate/tile011.png"
+  }
+  images {
+    image: "/example/assets/images/barrier_deactivate/tile012.png"
+  }
+  images {
+    image: "/example/assets/images/barrier_deactivate/tile013.png"
+  }
+  images {
+    image: "/example/assets/images/barrier_deactivate/tile014.png"
+  }
+  images {
+    image: "/example/assets/images/barrier_deactivate/tile015.png"
+  }
+  images {
+    image: "/example/assets/images/barrier_deactivate/tile016.png"
+  }
+  images {
+    image: "/example/assets/images/barrier_deactivate/tile017.png"
+  }
+  fps: 12
+}
+animations {
+  id: "barrier_deactivated"
+  images {
+    image: "/example/assets/images/barrier_deactivate/tile017.png"
+  }
+  fps: 12
+}
+animations {
+  id: "access_card"
+  images {
+    image: "/example/assets/images/pickups/access_card_item/tile000.png"
+  }
+  images {
+    image: "/example/assets/images/pickups/access_card_item/tile001.png"
+  }
+  images {
+    image: "/example/assets/images/pickups/access_card_item/tile002.png"
+  }
+  images {
+    image: "/example/assets/images/pickups/access_card_item/tile003.png"
+  }
+  images {
+    image: "/example/assets/images/pickups/access_card_item/tile004.png"
+  }
+  images {
+    image: "/example/assets/images/pickups/access_card_item/tile005.png"
+  }
+  images {
+    image: "/example/assets/images/pickups/access_card_item/tile006.png"
+  }
+  images {
+    image: "/example/assets/images/pickups/access_card_item/tile007.png"
+  }
+  images {
+    image: "/example/assets/images/pickups/access_card_item/tile008.png"
+  }
+  images {
+    image: "/example/assets/images/pickups/access_card_item/tile009.png"
+  }
+  images {
+    image: "/example/assets/images/pickups/access_card_item/tile010.png"
+  }
+  images {
+    image: "/example/assets/images/pickups/access_card_item/tile011.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 12
+}
+animations {
+  id: "ammo_box"
+  images {
+    image: "/example/assets/images/pickups/ammo_box_item/tile000.png"
+  }
+  images {
+    image: "/example/assets/images/pickups/ammo_box_item/tile001.png"
+  }
+  images {
+    image: "/example/assets/images/pickups/ammo_box_item/tile002.png"
+  }
+  images {
+    image: "/example/assets/images/pickups/ammo_box_item/tile003.png"
+  }
+  images {
+    image: "/example/assets/images/pickups/ammo_box_item/tile004.png"
+  }
+  images {
+    image: "/example/assets/images/pickups/ammo_box_item/tile005.png"
+  }
+  images {
+    image: "/example/assets/images/pickups/ammo_box_item/tile006.png"
+  }
+  images {
+    image: "/example/assets/images/pickups/ammo_box_item/tile007.png"
+  }
+  images {
+    image: "/example/assets/images/pickups/ammo_box_item/tile008.png"
+  }
+  images {
+    image: "/example/assets/images/pickups/ammo_box_item/tile009.png"
+  }
+  images {
+    image: "/example/assets/images/pickups/ammo_box_item/tile010.png"
+  }
+  images {
+    image: "/example/assets/images/pickups/ammo_box_item/tile011.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 12
+}
+animations {
+  id: "medkit"
+  images {
+    image: "/example/assets/images/pickups/medkit_item/tile000.png"
+  }
+  images {
+    image: "/example/assets/images/pickups/medkit_item/tile001.png"
+  }
+  images {
+    image: "/example/assets/images/pickups/medkit_item/tile002.png"
+  }
+  images {
+    image: "/example/assets/images/pickups/medkit_item/tile003.png"
+  }
+  images {
+    image: "/example/assets/images/pickups/medkit_item/tile004.png"
+  }
+  images {
+    image: "/example/assets/images/pickups/medkit_item/tile005.png"
+  }
+  images {
+    image: "/example/assets/images/pickups/medkit_item/tile006.png"
+  }
+  images {
+    image: "/example/assets/images/pickups/medkit_item/tile007.png"
+  }
+  images {
+    image: "/example/assets/images/pickups/medkit_item/tile008.png"
+  }
+  images {
+    image: "/example/assets/images/pickups/medkit_item/tile009.png"
+  }
+  images {
+    image: "/example/assets/images/pickups/medkit_item/tile010.png"
+  }
+  images {
+    image: "/example/assets/images/pickups/medkit_item/tile011.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 12
+}
+animations {
+  id: "spikes_idle"
+  images {
+    image: "/example/assets/images/traps/laser_spikes_idle/tile000.png"
+  }
+  images {
+    image: "/example/assets/images/traps/laser_spikes_idle/tile001.png"
+  }
+  images {
+    image: "/example/assets/images/traps/laser_spikes_idle/tile002.png"
+  }
+  images {
+    image: "/example/assets/images/traps/laser_spikes_idle/tile003.png"
+  }
+  images {
+    image: "/example/assets/images/traps/laser_spikes_idle/tile004.png"
+  }
+  images {
+    image: "/example/assets/images/traps/laser_spikes_idle/tile005.png"
+  }
+  images {
+    image: "/example/assets/images/traps/laser_spikes_idle/tile006.png"
+  }
+  images {
+    image: "/example/assets/images/traps/laser_spikes_idle/tile007.png"
+  }
+  images {
+    image: "/example/assets/images/traps/laser_spikes_idle/tile008.png"
+  }
+  images {
+    image: "/example/assets/images/traps/laser_spikes_idle/tile009.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 12
+}
+animations {
+  id: "player_idle"
+  images {
+    image: "/example/assets/images/player/idle/cyber prisoner idle-Sheet_0.png"
+  }
+  images {
+    image: "/example/assets/images/player/idle/cyber prisoner idle-Sheet_1.png"
+  }
+  images {
+    image: "/example/assets/images/player/idle/cyber prisoner idle-Sheet_2.png"
+  }
+  images {
+    image: "/example/assets/images/player/idle/cyber prisoner idle-Sheet_3.png"
+  }
+  images {
+    image: "/example/assets/images/player/idle/cyber prisoner idle-Sheet_4.png"
+  }
+  images {
+    image: "/example/assets/images/player/idle/cyber prisoner idle-Sheet_5.png"
+  }
+  images {
+    image: "/example/assets/images/player/idle/cyber prisoner idle-Sheet_6.png"
+  }
+  images {
+    image: "/example/assets/images/player/idle/cyber prisoner idle-Sheet_7.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 12
+}
+animations {
+  id: "terminal_deactivate"
+  images {
+    image: "/example/assets/images/control_panel_deactivate/tile000.png"
+  }
+  images {
+    image: "/example/assets/images/control_panel_deactivate/tile001.png"
+  }
+  images {
+    image: "/example/assets/images/control_panel_deactivate/tile002.png"
+  }
+  images {
+    image: "/example/assets/images/control_panel_deactivate/tile003.png"
+  }
+  images {
+    image: "/example/assets/images/control_panel_deactivate/tile004.png"
+  }
+  images {
+    image: "/example/assets/images/control_panel_deactivate/tile005.png"
+  }
+  images {
+    image: "/example/assets/images/control_panel_deactivate/tile006.png"
+  }
+  images {
+    image: "/example/assets/images/control_panel_deactivate/tile007.png"
+  }
+  images {
+    image: "/example/assets/images/control_panel_deactivate/tile008.png"
+  }
+  images {
+    image: "/example/assets/images/control_panel_deactivate/tile009.png"
+  }
+  images {
+    image: "/example/assets/images/control_panel_deactivate/tile010.png"
+  }
+  images {
+    image: "/example/assets/images/control_panel_deactivate/tile011.png"
+  }
+  images {
+    image: "/example/assets/images/control_panel_deactivate/tile012.png"
+  }
+  images {
+    image: "/example/assets/images/control_panel_deactivate/tile013.png"
+  }
+  images {
+    image: "/example/assets/images/control_panel_deactivate/tile014.png"
+  }
+  images {
+    image: "/example/assets/images/control_panel_deactivate/tile015.png"
+  }
+  images {
+    image: "/example/assets/images/control_panel_deactivate/tile016.png"
+  }
+  images {
+    image: "/example/assets/images/control_panel_deactivate/tile017.png"
+  }
+  images {
+    image: "/example/assets/images/control_panel_deactivate/tile018.png"
+  }
+  images {
+    image: "/example/assets/images/control_panel_deactivate/tile019.png"
+  }
+  fps: 12
+}
+animations {
+  id: "terminal_idle"
+  images {
+    image: "/example/assets/images/control_panel_idle/tile000.png"
+  }
+  images {
+    image: "/example/assets/images/control_panel_idle/tile001.png"
+  }
+  images {
+    image: "/example/assets/images/control_panel_idle/tile002.png"
+  }
+  images {
+    image: "/example/assets/images/control_panel_idle/tile003.png"
+  }
+  images {
+    image: "/example/assets/images/control_panel_idle/tile004.png"
+  }
+  images {
+    image: "/example/assets/images/control_panel_idle/tile005.png"
+  }
+  images {
+    image: "/example/assets/images/control_panel_idle/tile006.png"
+  }
+  images {
+    image: "/example/assets/images/control_panel_idle/tile007.png"
+  }
+  images {
+    image: "/example/assets/images/control_panel_idle/tile008.png"
+  }
+  images {
+    image: "/example/assets/images/control_panel_idle/tile009.png"
+  }
+  images {
+    image: "/example/assets/images/control_panel_idle/tile010.png"
+  }
+  images {
+    image: "/example/assets/images/control_panel_idle/tile011.png"
+  }
+  images {
+    image: "/example/assets/images/control_panel_idle/tile012.png"
+  }
+  images {
+    image: "/example/assets/images/control_panel_idle/tile013.png"
+  }
+  images {
+    image: "/example/assets/images/control_panel_idle/tile014.png"
+  }
+  images {
+    image: "/example/assets/images/control_panel_idle/tile015.png"
+  }
+  images {
+    image: "/example/assets/images/control_panel_idle/tile016.png"
+  }
+  images {
+    image: "/example/assets/images/control_panel_idle/tile017.png"
+  }
+  images {
+    image: "/example/assets/images/control_panel_idle/tile018.png"
+  }
+  images {
+    image: "/example/assets/images/control_panel_idle/tile019.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 12
+}
+animations {
+  id: "player_run"
+  images {
+    image: "/example/assets/images/player/run/cyber prisoner run cycle-Sheet_0.png"
+  }
+  images {
+    image: "/example/assets/images/player/run/cyber prisoner run cycle-Sheet_1.png"
+  }
+  images {
+    image: "/example/assets/images/player/run/cyber prisoner run cycle-Sheet_2.png"
+  }
+  images {
+    image: "/example/assets/images/player/run/cyber prisoner run cycle-Sheet_3.png"
+  }
+  images {
+    image: "/example/assets/images/player/run/cyber prisoner run cycle-Sheet_4.png"
+  }
+  images {
+    image: "/example/assets/images/player/run/cyber prisoner run cycle-Sheet_5.png"
+  }
+  images {
+    image: "/example/assets/images/player/run/cyber prisoner run cycle-Sheet_6.png"
+  }
+  images {
+    image: "/example/assets/images/player/run/cyber prisoner run cycle-Sheet_7.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 12
+}
+animations {
+  id: "player_jump"
+  images {
+    image: "/example/assets/images/player/jump/cyber prisoner jump cycle -Sheet_0.png"
+  }
+  images {
+    image: "/example/assets/images/player/jump/cyber prisoner jump cycle -Sheet_1.png"
+  }
+  images {
+    image: "/example/assets/images/player/jump/cyber prisoner jump cycle -Sheet_2.png"
+  }
+  images {
+    image: "/example/assets/images/player/jump/cyber prisoner jump cycle -Sheet_3.png"
+  }
+  images {
+    image: "/example/assets/images/player/jump/cyber prisoner jump cycle -Sheet_4.png"
+  }
+  images {
+    image: "/example/assets/images/player/jump/cyber prisoner jump cycle -Sheet_5.png"
+  }
+  fps: 24
+}
+animations {
+  id: "player_land"
+  images {
+    image: "/example/assets/images/player/jump/cyber prisoner jump cycle -Sheet_5.png"
+  }
+  images {
+    image: "/example/assets/images/player/jump/cyber prisoner jump cycle -Sheet_6.png"
+  }
+  images {
+    image: "/example/assets/images/player/jump/cyber prisoner jump cycle -Sheet_7.png"
+  }
+  images {
+    image: "/example/assets/images/player/jump/cyber prisoner jump cycle -Sheet_8.png"
+  }
+  images {
+    image: "/example/assets/images/player/jump/cyber prisoner jump cycle -Sheet_9.png"
+  }
+  images {
+    image: "/example/assets/images/player/jump/cyber prisoner jump cycle -Sheet_10.png"
+  }
+  fps: 24
+}
+animations {
+  id: "player_hurt"
+  images {
+    image: "/example/assets/images/player/hurt/cyber prisoner hurt-Sheet_0.png"
+  }
+  images {
+    image: "/example/assets/images/player/hurt/cyber prisoner hurt-Sheet_1.png"
+  }
+  images {
+    image: "/example/assets/images/player/hurt/cyber prisoner hurt-Sheet_2.png"
+  }
+  fps: 12
+}
+animations {
+  id: "player_die"
+  images {
+    image: "/example/assets/images/player/dead/cyber prisoner death-Sheet_0.png"
+  }
+  images {
+    image: "/example/assets/images/player/dead/cyber prisoner death-Sheet_1.png"
+  }
+  images {
+    image: "/example/assets/images/player/dead/cyber prisoner death-Sheet_2.png"
+  }
+  images {
+    image: "/example/assets/images/player/dead/cyber prisoner death-Sheet_3.png"
+  }
+  images {
+    image: "/example/assets/images/player/dead/cyber prisoner death-Sheet_4.png"
+  }
+  images {
+    image: "/example/assets/images/player/dead/cyber prisoner death-Sheet_5.png"
+  }
+  fps: 12
+}
+animations {
+  id: "player_wall_slide"
+  images {
+    image: "/example/assets/images/player/wall_slide/cyber prisoner Wall grab-Sheet_0.png"
+  }
+  images {
+    image: "/example/assets/images/player/wall_slide/cyber prisoner Wall grab-Sheet_1.png"
+  }
+  images {
+    image: "/example/assets/images/player/wall_slide/cyber prisoner Wall grab-Sheet_2.png"
+  }
+  images {
+    image: "/example/assets/images/player/wall_slide/cyber prisoner Wall grab-Sheet_3.png"
+  }
+  images {
+    image: "/example/assets/images/player/wall_slide/cyber prisoner Wall grab-Sheet_4.png"
+  }
+  images {
+    image: "/example/assets/images/player/wall_slide/cyber prisoner Wall grab-Sheet_5.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 12
+}
+extrude_borders: 2

@@ -1,4 +1,36 @@
+key_trigger {
+  input: KEY_LEFT
+  action: "left"
+}
+key_trigger {
+  input: KEY_RIGHT
+  action: "right"
+}
+key_trigger {
+  input: KEY_SPACE
+  action: "jump"
+}
+key_trigger {
+  input: KEY_Z
+  action: "jump"
+}
+key_trigger {
+  input: KEY_X
+  action: "attack"
+}
+key_trigger {
+  input: KEY_E
+  action: "interact"
+}
 mouse_trigger {
   input: MOUSE_BUTTON_1
   action: "touch"
+}
+gamepad_trigger {
+  input: GAMEPAD_LSTICK_LEFT
+  action: "left"
+}
+gamepad_trigger {
+  input: GAMEPAD_LSTICK_RIGHT
+  action: "right"
 }

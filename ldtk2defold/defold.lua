@@ -197,6 +197,7 @@ function gameobject:new(name, basename, embedded)
     self.components = {}
     self.scripts = {}
     self.embedded = embedded
+    self.encode_fn = parser.encodeTilemap
 end
 
 function gameobject:set_position(x, y, z)
@@ -242,6 +243,10 @@ function gameobject:compose()
         table.insert(c, { id = k, component = v.path, properties = v.properties })
     end
     if #c > 0 then data.data.components = c end
+
+    if self.embedded_components then
+        data.data.embedded_components = self.embedded_components
+    end
 
     return data
 end

@@ -1,0 +1,15 @@
+local data = require 'example.scripts.data'
+local entities = require 'example.scripts.entities'
+
+go.property('active', false)
+
+function on_message(self, message_id, message, sender)
+    if message_id == hash('activate') and not self.active then
+        print('activate')
+        self.active = true
+        sprite.play_flipbook('#sprite', hash('barrier_deactivate'), function()
+            msg.post('#collisionobject', 'disable')
+            sprite.play_flipbook('#sprite', hash('barrier_deactivated'))
+        end)
+    end
+end

@@ -1,0 +1,7 @@
+collision_shape: "/example/platformer/Level_0/IntGrid.tilemap"
+type: COLLISION_OBJECT_TYPE_STATIC
+mass: 0.0
+friction: 0.1
+restitution: 0.5
+group: "ground"
+mask: "player"

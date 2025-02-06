@@ -1,7 +1,0 @@
-tile_set: "/main/autolayers5/tilesource/Cavernas_by_Adam_Saltsman.tilesource"
-layers {
-  id: "Tiles1"
-  z: 0
-}
-material: "/builtins/materials/tile_map.material"
-blend_mode: BLEND_MODE_ALPHA

@@ -1,0 +1,122 @@
+name: "Level_0"
+instances {
+  id: "Player"
+  prototype: "/example/gameobjects/player.go"
+  position {
+    x: 40.0
+    y: 64.0
+  }
+  component_properties {
+    id: "iid"
+    properties {
+      id: "iid"
+      value: "a168e070-c210-11ef-bc88-bfb526423006"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+}
+instances {
+  id: "Camera"
+  prototype: "/example/gameobjects/camera.go"
+  position {
+    x: 320.0
+    y: 240.0
+  }
+}
+instances {
+  id: "Lift"
+  prototype: "/example/gameobjects/lift.go"
+  position {
+    x: 232.0
+    y: 232.0
+  }
+  component_properties {
+    id: "iid"
+    properties {
+      id: "iid"
+      value: "1407ddb0-c210-11ef-b069-f56b07cb3c0d"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+}
+instances {
+  id: "Terminal"
+  prototype: "/example/gameobjects/terminal.go"
+  position {
+    x: 96.0
+    y: 384.0
+  }
+  component_properties {
+    id: "iid"
+    properties {
+      id: "iid"
+      value: "9fd7a730-c210-11ef-bc88-63ab02b0ff5e"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+}
+instances {
+  id: "Barrier"
+  prototype: "/example/gameobjects/barrier.go"
+  position {
+    x: 576.0
+    y: 224.0
+  }
+  component_properties {
+    id: "iid"
+    properties {
+      id: "iid"
+      value: "79197c40-c210-11ef-bc88-4d3d1fbaa0ad"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+}
+scale_along_z: 0
+embedded_instances {
+  id: "IntGrid"
+  data: "components {\n"
+  "  id: \"IntGrid\"\n"
+  "  component: \"/example/platformer/Level_0/IntGrid.tilemap\"\n"
+  "  position {\n"
+  "    z: -0.003\n"
+  "  }\n"
+  "}\n"
+  "components {\n"
+  "  id: \"collisionobject\"\n"
+  "  component: \"/example/collisions/IntGrid.collisionobject\"\n"
+  "}\n"
+  ""
+}
+embedded_instances {
+  id: "Tiles"
+  data: "components {\n"
+  "  id: \"Tiles\"\n"
+  "  component: \"/example/platformer/Level_0/Tiles.tilemap\"\n"
+  "  position {\n"
+  "    z: -0.001\n"
+  "  }\n"
+  "}\n"
+  ""
+}
+embedded_instances {
+  id: "world"
+  data: "components {\n"
+  "  id: \"clear_color\"\n"
+  "  component: \"/ldtk2defold/scripts/clear_color.script\"\n"
+  "  properties {\n"
+  "    id: \"color\"\n"
+  "    value: \"0.4117647058823529, 0.41568627450980394, 0.4745098039215686, 1.0\"\n"
+  "    type: PROPERTY_TYPE_VECTOR4\n"
+  "  }\n"
+  "}\n"
+  "components {\n"
+  "  id: \"iid\"\n"
+  "  component: \"/ldtk2defold/scripts/iid.script\"\n"
+  "  properties {\n"
+  "    id: \"iid\"\n"
+  "    value: \"d6e7c9b0-c210-11ef-bc88-2393468a5fab\"\n"
+  "    type: PROPERTY_TYPE_HASH\n"
+  "  }\n"
+  "}\n"
+  ""
+}

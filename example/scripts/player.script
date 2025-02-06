@@ -1,0 +1,135 @@
+local data = require 'example.scripts.data'
+local platypus = require 'platypus.platypus'
+
+local LEFT = hash("left")
+local RIGHT = hash("right")
+local JUMP = hash("jump")
+local INTERACT = hash("interact")
+
+function init(self)
+    local level_iid = go.get(msg.url(nil, 'world', 'iid'), 'iid')
+    local iid = go.get('#iid', 'iid')
+
+    self.data = data.entity_fields[level_iid][iid]
+    self.speed = self.data.speed or 100
+
+    self.platypus = platypus.create({
+        collisions = {
+            seperation = platypus.SEPERATION_RAYS,
+            groups = {
+                [hash("ground")] = platypus.DIR_ALL,
+            },
+            left = 9,
+            right = 9,
+            top = 16,
+            bottom = 16,
+            offset = vmath.vector3(0, 16, 0),
+        },
+        gravity = -800,
+        max_velocity = 300,
+        allow_double_jump = true,
+        allow_wall_jump = true,
+        allow_wall_slide = true,
+        debug = false,
+        reparent = true
+    })
+
+
+    self.facing_right = true
+    self.input_state = {}
+    self.had_ground_contact = false
+    self.update = true
+    self.jump_count = 0
+
+    msg.post('.', 'acquire_input_focus')
+end
+
+local function set_state(self, state, solo, fn)
+    if self.state ~= state then
+        self.state = state
+        if solo then self.update = false end
+        sprite.play_flipbook('#sprite', state, function()
+            if solo then self.update = true end
+            if fn then fn(self) end
+        end)
+    end
+end
+
+function fixed_update(self, dt)
+    if not self.update then
+        self.platypus.update(dt)
+        return
+    end
+
+    local moving = true
+    if self.input_state[LEFT] then
+        self.platypus.left(self.speed)
+        sprite.set_hflip("#sprite", true)
+        self.facing_right = false
+    elseif self.input_state[RIGHT] then
+        self.platypus.right(self.speed)
+        sprite.set_hflip("#sprite", false)
+        self.facing_right = true
+    else
+        moving = false
+    end
+
+    self.platypus.update(dt)
+
+
+    if self.platypus.has_ground_contact() then
+        if not self.had_ground_contact then
+            set_state(self, hash("player_land"), true)
+        elseif moving then
+            set_state(self, hash("player_run"))
+        else
+            set_state(self, hash("player_idle"))
+        end
+    else
+        local raycast = physics.raycast(go.get_position(), go.get_position() + vmath.vector3(0, -32, 0),
+            { hash("ground") })
+        if self.platypus.is_wall_sliding() then
+            set_state(self, hash("player_wall_slide"))
+        elseif raycast and self.platypus.is_falling() then
+            set_state(self, hash("player_land"), true)
+        else
+            set_state(self, hash("player_jump"))
+        end
+    end
+
+    self.had_ground_contact = self.platypus.has_ground_contact()
+end
+
+function on_message(self, message_id, message, sender)
+    self.platypus.on_message(message_id, message, sender)
+
+    if message_id == hash('trigger_response') and message.group == hash('interactable') then
+        if message.enter then
+            self.interactable = message.other_id
+        else
+            self.interactable = nil
+        end
+    elseif message_id == hash('platypus_ground_contact') then
+        self.jump_count = 0
+    elseif message_id == platypus.WALL_JUMP then
+        sprite.set_hflip("#sprite", self.platypus.velocity.x < 0)
+    end
+end
+
+function on_input(self, action_id, action)
+    if not action_id then return end
+
+    if action_id == JUMP then
+        if action.pressed then
+            self.platypus.jump(375)
+        elseif action.released then
+            self.platypus.abort_jump()
+        end
+    elseif action_id == INTERACT and self.interactable and action.released then
+        msg.post(self.interactable, 'activate')
+    elseif action.pressed then
+        self.input_state[action_id] = true
+    elseif action.released then
+        self.input_state[action_id] = nil
+    end
+end

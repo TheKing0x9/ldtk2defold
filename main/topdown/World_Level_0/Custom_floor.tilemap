@@ -1,7 +1,0 @@
-tile_set: "/main/topdown/tilesource/TopDown_by_deepnight2.tilesource"
-layers {
-  id: "Custom_floor1"
-  z: 0
-}
-material: "/builtins/materials/tile_map.material"
-blend_mode: BLEND_MODE_ALPHA

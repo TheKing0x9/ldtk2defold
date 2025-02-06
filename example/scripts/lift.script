@@ -1,0 +1,51 @@
+local data = require 'example.scripts.data'
+
+local points = {
+    { x = 14 * 32, y = 23 * 32 },
+    { x = 14 * 32, y = 320 },
+}
+
+local lift_speed = 100
+local wait_time = 2
+local waiting = false
+
+function init(self)
+    self.waiting = false
+
+    local world_iid = go.get(msg.url(nil, 'world', 'iid'), 'iid')
+    local iid = go.get('#iid', 'iid')
+
+    self.data = data.entity_fields[world_iid][iid]
+    self.path = self.data.path or points
+    self.wait_time = self.data.wait_time or wait_time
+    self.speed = self.data.speed or lift_speed
+
+    self.current_point = 1
+
+    -- transform path to world space from tile space
+    for i, point in ipairs(self.path) do
+        self.path[i] = vmath.vector3(point.x * 16, point.y * 16, 0)
+    end
+end
+
+local function move_lift(self, dt)
+    if not self.waiting then
+        local target = self.path[self.current_point]
+        local pos = go.get_position()
+        local direction = vmath.normalize(vmath.vector3(target.x, target.y, 0) - pos)
+        local new_pos = pos + direction * self.speed * dt
+        go.set_position(new_pos)
+
+        if vmath.length(new_pos - vmath.vector3(target.x, target.y, 0)) < 1 then
+            self.waiting = true
+            timer.delay(wait_time, false, function()
+                self.waiting = false
+                self.current_point = self.current_point % #self.path + 1
+            end)
+        end
+    end
+end
+
+function update(self, dt)
+    move_lift(self, dt)
+end
