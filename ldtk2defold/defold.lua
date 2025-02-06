@@ -197,6 +197,7 @@ function gameobject:new(name, basename, embedded)
     self.components = {}
     self.scripts = {}
     self.embedded = embedded
+    self.encode_fn = parser.encodeTilemap
 end
 
 function gameobject:set_position(x, y, z)
@@ -243,6 +244,10 @@ function gameobject:compose()
     end
     if #c > 0 then data.data.components = c end
 
+    if self.embedded_components then
+        data.data.embedded_components = self.embedded_components
+    end
+
     return data
 end
 
@@ -254,6 +259,36 @@ end
 function gameobject:add_child(id)
     self.children = self.children or {}
     table.insert(self.children, id)
+    return self
+end
+
+local default = {
+    friction = 0.1,
+    restitution = 0.1,
+    mass = 1,
+    type = 'COLLISION_OBJECT_TYPE_STATIC',
+    group = 'default',
+    mask = 'default',
+}
+
+function gameobject:add_collision_object(id, path, properties)
+    print(properties)
+    properties = properties or default
+    self.embedded_components = self.embedded_components or {}
+    table.insert(self.embedded_components, {
+        id = id,
+        -- type = '"collisionobject"',
+        data = {
+            collision_shape = path,
+            friction = properties.friction,
+            restitution = properties.restitution,
+            mass = properties.mass,
+            type = properties.type,
+            group = properties.group,
+            mask = properties.mask,
+        }
+    })
+
     return self
 end
 

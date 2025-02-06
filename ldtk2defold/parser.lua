@@ -46,7 +46,10 @@ local function ldtk_to_defold_types(value, ldtk_type, h)
     elseif ldtk_type == 'Point' then
         value = value and string.format('vmath.vector3(%f, %f, 0)', value.cx, h - value.cy)
     elseif ldtk_type == 'EntityRef' then
-        value = value and ('"' .. value.entityIid .. '"')
+        value = value and {
+            levelIid = '"' .. value.levelIid .. '"',
+            entityIid = '"' .. value.entityIid .. '"'
+        }
     elseif ldtk_type == 'Tile' then
         -- perhaps change tilemap uid to a tileset path
     elseif type(value) == 'string' then
@@ -151,6 +154,8 @@ local function create_tilemap(identifier, instance, tileset, collection, root, l
         setgrid[i][x] = setgrid[i][x] or {}
         setgrid[i][x][y] = true
 
+        print(x, y, tile_id)
+
         grid:add_tile(identifier .. i, x, y, tile_id, fx and 1 or 0, fy and 1 or 0)
     end
 
@@ -162,6 +167,11 @@ local function create_tilemap(identifier, instance, tileset, collection, root, l
 
     go:add_component_file(identifier, grid.path)
     go:set_component_position(identifier, instance.__pxTotalOffsetX, -instance.__pxTotalOffsetY, z)
+
+    if config.assign_collision then
+        go:add_collision_object('collisionobject', grid.path, config.collisions and config.collisions[identifier])
+            :add_collision_object('collisionobject2', grid.path, config.collisions and config.collisions[identifier])
+    end
 end
 
 local instance_lookup = {
@@ -259,7 +269,6 @@ function M.parse(root, identifier, text, config_file)
     for i, layer in ipairs(data.defs.layers) do
         layers[layer.identifier] = offset - 0.001 * i
     end
-
     -- create collection for each world
     local collections = {}
     local level_fields = {}
@@ -309,6 +318,7 @@ function M.parse(root, identifier, text, config_file)
                 end
             end
         end
+
         collection:write()
         collections[level.identifier] = collection
     end

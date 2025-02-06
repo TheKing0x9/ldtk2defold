@@ -1,0 +1,32 @@
+local data = require 'example.scripts.data'
+local entities = require 'example.scripts.entities'
+
+go.property('active', false)
+
+function init(self)
+    msg.post('#', 'ready')
+end
+
+function on_message(self, message_id, message, sender)
+    print(message_id)
+    if message_id == hash('ready') then
+        local world_iid = go.get(msg.url(nil, 'world', 'iid'), 'iid')
+        local iid = go.get('#iid', 'iid')
+
+        local entry = data.entity_fields[world_iid][iid].target
+        self.target = entities.get(hash(entry.levelIid), hash(entry.entityIid))
+    elseif message_id == hash('activate') and not self.active then
+        self.active = true
+        go.set('#sprite', 'tint.w', 1)
+        sprite.play_flipbook('#sprite', hash('terminal_deactivate'), function()
+            print('here', self.target)
+            msg.post(self.target, 'activate')
+        end)
+    elseif message_id == hash('trigger_response') and message.group == hash('player') then
+        if message.enter and not self.active then
+            go.set('#sprite', 'tint.w', 0)
+        else
+            go.set('#sprite', 'tint.w', 1)
+        end
+    end
+end

@@ -1,0 +1,8 @@
+local entities = require 'example.scripts.entities'
+
+function init(self)
+    local worldIid = go.get(msg.url(nil, 'world', 'iid'), 'iid')
+    local iid = go.get('#iid', 'iid')
+
+    entities.register(worldIid, iid, msg.url('.'))
+end
