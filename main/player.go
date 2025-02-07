@@ -1,3 +1,7 @@
+components {
+  id: "iid"
+  component: "/ldtk2defold/scripts/iid.script"
+}
 embedded_components {
   id: "sprite"
   type: "sprite"

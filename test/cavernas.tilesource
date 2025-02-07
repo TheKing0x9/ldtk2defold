@@ -1,0 +1,10 @@
+collision: "/main/Cavernas_by_Adam_Saltsman.png"
+sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+tile_height: 8
+material_tag: "tile"
+image: "/main/Cavernas_by_Adam_Saltsman.png"
+extrude_borders: 0
+inner_padding: 0
+tile_margin: 0
+tile_width: 8
+tile_spacing: 0

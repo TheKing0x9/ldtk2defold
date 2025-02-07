@@ -1,0 +1,54 @@
+scale_along_z: 0
+name: "collection"
+instances: {
+  component_properties: {
+    properties: {
+      type: PROPERTY_TYPE_HASH
+      id: "iid"
+      value: "1an5to"
+    }
+    id: "iid"
+  }
+  position: {
+    y: 100.0
+    x: 123.0
+    z: 1.0
+  }
+  id: "go"
+  children: "go1"
+  children: "go2"
+  scale3: {
+    y: 1.0
+    x: 1.0
+    z: 1.0
+  }
+  prototype: "/main/player.go"
+}
+instances: {
+  scale3: {
+    y: 1.0
+    x: 1.0
+    z: 1.0
+  }
+  id: "go1"
+  position: {
+    y: 100.0
+    x: 123.0
+    z: 1.0
+  }
+  prototype: "/main/player.go"
+}
+instances: {
+  scale3: {
+    y: 1.0
+    x: 1.0
+    z: 1.0
+  }
+  id: "go2"
+  position: {
+    y: 100.0
+    x: -123.0
+    z: 1.0
+  }
+  prototype: "/main/player.go"
+}
