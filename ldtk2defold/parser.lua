@@ -111,7 +111,9 @@ local function create_tilemap(layer, tileset, root, txns)
         return layers[#layers]
     end
 
-    local tiles = (layer.autoLayerTiles and layer.autoLayerTiles) or layer.gridTiles
+    local is_auto_layer_tiles = layer.autoLayerTiles and (#layer.autoLayerTiles > 0)
+
+    local tiles = (is_auto_layer_tiles and layer.autoLayerTiles) or layer.gridTiles
     for _, tile in ipairs(tiles) do
         local x = math.floor(tile.px[1] / tileset.grid_size)
         local y = math.floor(h - tile.px[2] / tileset.grid_size - 1)

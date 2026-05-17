@@ -44,7 +44,7 @@ However, this is configurable in the editor using `View -> Change LDTK Config Fi
 local config = {}
 
 -- assigns collision images to the tilesources.
-config.assign_collisions = true
+config.assign_collision = true
 
 -- directory in which project files are generated. Defaults to the directory .ldtk file is in.
 config.project_root = '/path/to/project'
