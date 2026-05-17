@@ -1,6 +1,5 @@
 -- todo : add collisionobjects to gameobjects
 
-local json = require("ldtk2defold.json")
 local enums = require('ldtk2defold.enums')
 
 local parser = {}
